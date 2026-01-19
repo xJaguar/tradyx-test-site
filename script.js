@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     id: '1',
                     name: 'John Doe',
-                    email: 'john@example.com',
+                    email: 'johni@example.com',
                     password: 'password123',
                     joinDate: 'January 15, 2024',
                     wallet: {
@@ -403,3 +403,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start market simulation
     simulateMarketChanges();
 });
+
