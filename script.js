@@ -338,6 +338,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             ];
         }
+    },
+                {
+                    id: '3',
+                    name: 'Joshi',
+                    email: 'joshi@test.com',
+                    password: 'joshi123',
+                    joinDate: 'February 4, 2024',
+                    wallet: {
+                        totalBalance: 100.00,
+                        availableBalance: 32.00,
+                        stakedBalance: 68.00,
+                        assets: [
+                            { name: 'Namozia', symbol: 'NM', amount: 0.2, value: 8580.00 },
+                            { name: 'Ethereum', symbol: 'ETH', amount: 1.5, value: 3000.00 },
+                            { name: 'Solana', symbol: 'SOL', amount: 25, value: 1340.30 }
+                        ]
+                    }
+                }
+            ];
+        }
     }
     
     function saveUsersToStorage(usersArray) {
@@ -402,4 +422,5 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Start market simulation
     simulateMarketChanges();
+
 });
