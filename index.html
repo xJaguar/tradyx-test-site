@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Auth System | Crypto Wallet</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Main Container (Login/Signup) -->
+    <div class="container" id="container">
+        <!-- Login Form -->
+        <div class="form-container sign-in-container">
+            <form id="loginForm">
+                <div class="form-header">
+                    <i class="fas fa-wallet"></i>
+                    <h1>Welcome Back</h1>
+                    <p>Sign in to access your wallet</p>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="loginEmail" placeholder="Email Address" required />
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="loginPassword" placeholder="Password" required />
+                    <i class="fas fa-eye toggle-password" data-target="loginPassword"></i>
+                </div>
+                
+                <div class="form-options">
+                    <label class="checkbox">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-link">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="btn">
+                    <i class="fas fa-sign-in-alt"></i> Sign In
+                </button>
+                
+                <div class="divider">
+                    <span>or continue with</span>
+                </div>
+                
+                <div class="social-login">
+                    <button type="button" class="social-btn google">
+                        <i class="fab fa-google"></i> Google
+                    </button>
+                    <button type="button" class="social-btn metamask">
+                        <i class="fab fa-ethereum"></i> MetaMask
+                    </button>
+                </div>
+                
+                <p class="switch-form">
+                    Don't have an account? <a href="#" id="signUpLink">Sign up</a>
+                </p>
+            </form>
+        </div>
+
+        <!-- Sign Up Form -->
+        <div class="form-container sign-up-container">
+            <form id="signupForm">
+                <div class="form-header">
+                    <i class="fas fa-user-plus"></i>
+                    <h1>Create Account</h1>
+                    <p>Join our crypto wallet platform</p>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="signupName" placeholder="Full Name" required />
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="signupEmail" placeholder="Email Address" required />
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="signupPassword" placeholder="Password (min. 6 characters)" required />
+                    <i class="fas fa-eye toggle-password" data-target="signupPassword"></i>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+                    <i class="fas fa-eye toggle-password" data-target="confirmPassword"></i>
+                </div>
+                
+                <div class="terms">
+                    <label class="checkbox">
+                        <input type="checkbox" id="acceptTerms" required>
+                        <span>I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn">
+                    <i class="fas fa-user-plus"></i> Create Account
+                </button>
+                
+                <p class="switch-form">
+                    Already have an account? <a href="#" id="signInLink">Sign in</a>
+                </p>
+            </form>
+        </div>
+
+        <!-- Mobile View Toggle -->
+        <div class="mobile-toggle">
+            <div class="toggle-buttons">
+                <button class="toggle-btn active" id="mobileSignIn">Sign In</button>
+                <button class="toggle-btn" id="mobileSignUp">Sign Up</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Welcome Screen (Wallet Dashboard) -->
+    <div id="welcomeScreen" class="welcome-screen">
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="mobile-logo">
+                <i class="fas fa-wallet"></i>
+                <span>Wallet</span>
+            </div>
+            <button class="mobile-notification" id="notificationBtn">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">3</span>
+            </button>
+        </div>
+
+        <!-- Sidebar (Desktop) & Mobile Menu -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="user-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="user-info">
+                    <h3 id="welcomeUserName">John Doe</h3>
+                    <p id="welcomeUserEmail">john@example.com</p>
+                </div>
+                <button class="close-sidebar" id="closeSidebar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-wallet"></i>
+                    <span>My Wallet</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-exchange-alt"></i>
+                    <span>Transactions</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-coins"></i>
+                    <span>Staking</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="btn logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+                <div class="wallet-version">
+                    <span>v2.1.4 • Secure Connection</span>
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Dashboard Content -->
+        <div class="dashboard-content">
+            <!-- Balance Cards -->
+            <div class="dashboard-section">
+                <h2 class="section-title">Wallet Overview</h2>
+                
+                <div class="balance-cards">
+                    <div class="balance-card total-balance">
+                        <div class="balance-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="balance-info">
+                            <span class="balance-label">Total Balance</span>
+                            <h3 class="balance-amount">$<span id="totalBalance">12,450.75</span></h3>
+                            <span class="balance-change positive">
+                                <i class="fas fa-arrow-up"></i> 5.2% this week
+                            </span>
+                        </div>
+                        <button class="balance-action">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="balance-card available-balance">
+                        <div class="balance-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="balance-info">
+                            <span class="balance-label">Available</span>
+                            <h3 class="balance-amount">$<span id="availableBalance">8,240.50</span></h3>
+                            <span class="balance-change positive">
+                                <i class="fas fa-arrow-up"></i> 2.1% today
+                            </span>
+                        </div>
+                        <button class="balance-action">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="balance-card staked-balance">
+                        <div class="balance-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="balance-info">
+                            <span class="balance-label">Staked</span>
+                            <h3 class="balance-amount">$<span id="stakedBalance">4,210.25</span></h3>
+                            <span class="balance-change positive">
+                                <i class="fas fa-percentage"></i> 12.5% APY
+                            </span>
+                        </div>
+                        <button class="balance-action">
+                            <i class="fas fa-chart-line"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="dashboard-section">
+                <h2 class="section-title">Quick Actions</h2>
+                
+                <div class="quick-actions">
+                    <button class="action-btn send-money">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Send</span>
+                    </button>
+                    <button class="action-btn receive-money">
+                        <i class="fas fa-qrcode"></i>
+                        <span>Receive</span>
+                    </button>
+                    <button class="action-btn swap-crypto">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Swap</span>
+                    </button>
+                    <button class="action-btn stake-crypto">
+                        <i class="fas fa-lock"></i>
+                        <span>Stake</span>
+                    </button>
+                    <button class="action-btn buy-crypto">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Buy</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Assets Section -->
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2 class="section-title">My Assets</h2>
+                    <button class="btn-text">View All <i class="fas fa-arrow-right"></i></button>
+                </div>
+                
+                <div class="assets-list">
+                    <div class="asset-item">
+                        <div class="asset-icon bitcoin">
+                            <i class="fab fa-bitcoin"></i>
+                        </div>
+                        <div class="asset-info">
+                            <h4>Bitcoin</h4>
+                            <span class="asset-symbol">BTC</span>
+                        </div>
+                        <div class="asset-balance">
+                            <h4>0.425 BTC</h4>
+                            <span class="asset-value">$18,245.50</span>
+                        </div>
+                        <div class="asset-change positive">
+                            <i class="fas fa-arrow-up"></i> 3.2%
+                        </div>
+                    </div>
+                    
+                    <div class="asset-item">
+                        <div class="asset-icon ethereum">
+                            <i class="fab fa-ethereum"></i>
+                        </div>
+                        <div class="asset-info">
+                            <h4>Ethereum</h4>
+                            <span class="asset-symbol">ETH</span>
+                        </div>
+                        <div class="asset-balance">
+                            <h4>3.42 ETH</h4>
+                            <span class="asset-value">$6,850.20</span>
+                        </div>
+                        <div class="asset-change negative">
+                            <i class="fas fa-arrow-down"></i> 1.8%
+                        </div>
+                    </div>
+                    
+                    <div class="asset-item">
+                        <div class="asset-icon usdc">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="asset-info">
+                            <h4>USDC</h4>
+                            <span class="asset-symbol">USDC</span>
+                        </div>
+                        <div class="asset-balance">
+                            <h4>5,250 USDC</h4>
+                            <span class="asset-value">$5,250.00</span>
+                        </div>
+                        <div class="asset-change neutral">
+                            <i class="fas fa-minus"></i> 0.0%
+                        </div>
+                    </div>
+                    
+                    <div class="asset-item">
+                        <div class="asset-icon cardano">
+                            <i class="fab fa-ada"></i>
+                        </div>
+                        <div class="asset-info">
+                            <h4>Cardano</h4>
+                            <span class="asset-symbol">ADA</span>
+                        </div>
+                        <div class="asset-balance">
+                            <h4>2,150 ADA</h4>
+                            <span class="asset-value">$850.75</span>
+                        </div>
+                        <div class="asset-change positive">
+                            <i class="fas fa-arrow-up"></i> 7.5%
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Transactions -->
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2 class="section-title">Recent Transactions</h2>
+                    <button class="btn-text">See All <i class="fas fa-arrow-right"></i></button>
+                </div>
+                
+                <div class="transactions-list">
+                    <div class="transaction-item received">
+                        <div class="transaction-icon">
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
+                        <div class="transaction-info">
+                            <h4>Received Bitcoin</h4>
+                            <span class="transaction-date">Today, 10:42 AM</span>
+                        </div>
+                        <div class="transaction-amount positive">
+                            +0.025 BTC
+                            <span class="transaction-value">+$1,050.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="transaction-item sent">
+                        <div class="transaction-icon">
+                            <i class="fas fa-arrow-up"></i>
+                        </div>
+                        <div class="transaction-info">
+                            <h4>Sent Ethereum</h4>
+                            <span class="transaction-date">Yesterday, 3:15 PM</span>
+                        </div>
+                        <div class="transaction-amount negative">
+                            -0.5 ETH
+                            <span class="transaction-value">-$1,000.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="transaction-item staked">
+                        <div class="transaction-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="transaction-info">
+                            <h4>Staked Cardano</h4>
+                            <span class="transaction-date">Oct 12, 2:30 PM</span>
+                        </div>
+                        <div class="transaction-amount">
+                            500 ADA
+                            <span class="transaction-value">Staked</span>
+                        </div>
+                    </div>
+                    
+                    <div class="transaction-item swap">
+                        <div class="transaction-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="transaction-info">
+                            <h4>BTC to ETH Swap</h4>
+                            <span class="transaction-date">Oct 10, 11:20 AM</span>
+                        </div>
+                        <div class="transaction-amount">
+                            0.1 BTC → 1.8 ETH
+                            <span class="transaction-value">Swapped</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon portfolio">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Portfolio Diversity</span>
+                        <h3 class="stat-value">68%</h3>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon rewards">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Total Rewards</span>
+                        <h3 class="stat-value">$245.75</h3>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon security">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Security Score</span>
+                        <h3 class="stat-value">94/100</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation (Mobile Only) -->
+        <div class="bottom-nav">
+            <a href="#" class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-wallet"></i>
+                <span>Wallet</span>
+            </a>
+            <a href="#" class="nav-item qr-scan">
+                <div class="qr-icon">
+                    <i class="fas fa-qrcode"></i>
+                </div>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Market</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
