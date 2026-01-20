@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
             wallet: {
                 totalBalance: 12450.75,
                 availableBalance: 8240.50,
-                stakedBalance: 4210.25,
+                stakedBalance: 4220.25,
                 assets: [
                     { name: 'Bitcoin', symbol: 'BTC', amount: 0.425, value: 18245.50 },
                     { name: 'Ethereum', symbol: 'ETH', amount: 3.42, value: 6850.20 },
@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     id: '1',
                     name: 'John Doe',
-                    email: 'johni@example.com',
+                    email: 'johnii@example.com',
                     password: 'password123',
                     joinDate: 'January 15, 2024',
                     wallet: {
@@ -403,5 +403,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start market simulation
     simulateMarketChanges();
 });
+
 
 
